@@ -1,0 +1,50 @@
+<head>
+
+<h2>Resistration form</h2>
+<style type="text/css">
+
+table, th, td{
+border: 1px solid black;
+border-collapse: collapse;}
+</style>
+</head>
+<body style="background-color:powderblue;">
+  <p> First Name:<input type="text"></p>
+  <p> Last Name:<input type="text"></p>
+  <p> Age:<input type="text"></p>
+  <p> City:<input type="text"></p>
+  <button type="submit">Submit!</button>
+  <button type="button" onclick="alert('Hello User!')">Click Me! to say Hello</button>
+  <br>
+  <br><br>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+      </tr>
+      <tr>
+        <td>Ramesh</td>
+        <td>30</td>
+        <td>Male</td>
+      </tr>
+
+
+
+    </table>
+
+</body>
+<br><br>
+<%= form_tag(root_path, method: :get) do %>
+  <%= check_box_tag(:Name) %>
+   <%= label_tag(:Name, "I have a Name") %>
+     <%= check_box_tag(:Age) %>
+       <%= label_tag(:pet_dog, "I have a Age") %>
+         <%= check_box_tag(:Gender) %>
+           <%= label_tag(:pet_dog, "I am Male/Female") %>
+             <%= check_box_tag(:City) %>
+               <%= label_tag(:pet_dog, "I live in City") %>
+        <%= select_year Date.today, :start_year => 2009, :end_year => 1900  %>         
+
+  <%= submit_tag "Save" %>
+<% end %>
